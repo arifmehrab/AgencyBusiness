@@ -16,8 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 //==================================== Frontent Route Here ===================================================
 //==========================================================================================================//
+ // Pages
 Route::get('/', 'Frontend\FrontendController@index')->name('index');
-
+Route::get('/about-us', 'Frontend\FrontendController@aboutUs')->name('about.us');
+Route::get('/blog', 'Frontend\FrontendController@Blog')->name('blog');
+Route::get('/contact-us', 'Frontend\FrontendController@contactus')->name('contact.us');
 
 
 Auth::routes();
@@ -55,6 +58,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     // Newsletter 
     Route::get('/subscriber', 'HomeSettingController@subscriber')->name('subscriber');
     Route::delete('/subscriber/delete/{id}', 'HomeSettingController@newsLetterDelete')->name('subscriber.delete');
+
+    // Slider
+    Route::get('/slider', 'SliderController@index')->name('slider.index');
+    Route::post('/slider/store', 'SliderController@store')->name('slider.store');
+    Route::put('/slider/edit/{id}', 'SliderController@edit')->name('slider.edit');
+    Route::delete('/slider/delete/{id}', 'SliderController@delete')->name('slider.delete');
 
     // Post Route Here =======================
     Route::resource('category', 'CategoryController');

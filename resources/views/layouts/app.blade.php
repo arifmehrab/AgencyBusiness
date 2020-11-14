@@ -64,14 +64,12 @@
     <script src="{{ asset('public/Frontend/js/appear.js') }}"></script>
     <script src="{{ asset('public/Frontend/js/wow.js') }}"></script>
     <script src="{{ asset('public/Frontend/js/jQuery.style.switcher.min.js') }}"></script>
-    <script type="text/javascript" src="../../cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js">
+    <script type="text/javascript" src="{{ asset('public/Frontend/cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js') }}">
     </script>
     <script src="{{ asset('public/Frontend/js/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('public/Frontend/js/custom-script.js') }}"></script>
 
-
     <script src="{{ asset('public/Frontend/js/lang.js') }}"></script>
-    {{-- <script src="../../translate.google.com/translate_a/elementa0d8.html?cb=googleTranslateElementInit"></script> --}}
     <script src="{{ asset('public/Frontend/js/color-switcher.js') }}"></script>
     @stack('js')
 

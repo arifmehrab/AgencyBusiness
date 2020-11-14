@@ -1,20 +1,6 @@
 @extends('layouts.app')
 @section('title', 'home | page')
 @section('page_content')
-<!--Search Popup-->
-<div class="search-popup">
-    <div class="search-popup__overlay custom-cursor__overlay">
-        <div class="cursor"></div>
-        <div class="cursor-follower"></div>
-    </div><!-- /.search-popup__overlay -->
-    <div class="search-popup__inner">
-        <form action="#" class="search-popup__form">
-            <input type="text" name="search" placeholder="Type here to Search....">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div><!-- /.search-popup__inner -->
-</div><!-- /.search-popup -->
-
 
 <!-- Banner Section -->
 <section class="banner-section banner-one">
@@ -31,7 +17,7 @@
                     <div class="content">
                         <div class="inner">
                             <div class="sub-title">welcome to Linoor agency</div>
-                            <h1>Smart Web <br>Design Agency</h1>
+                            <h1>Smart Web Design Agency</h1>
                             <div class="link-box">
                                 <a class="theme-btn btn-style-one" href="about.html">
                                     <i class="btn-curve"></i>
