@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-use App\User;
+use App\Admin;
 use Illuminate\Database\Eloquent\Model;
 
 class post extends Model
@@ -14,6 +14,6 @@ class post extends Model
     // belong to user
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(Admin::class, 'admin_id', 'id');
     }
 }

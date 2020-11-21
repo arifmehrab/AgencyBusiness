@@ -74,7 +74,74 @@
           <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label class="form-control-label" for="divition">Copyright Text</label>
+                    <label class="form-control-label" for="service_title">Service Title</label>
+                    <textarea name="service_title" id="service_title" cols="30" rows="3" class="form-control">
+                        {{ $settingInfo->service_title }}
+                    </textarea>
+                </div>
+            </div><!-- End colum -->
+          </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-control-label" for="service_sub_title">Service Sub Titile</label>
+                    <textarea name="service_sub_title" id="service_sub_title" cols="30" rows="3" class="form-control">
+                        {{ $settingInfo->service_sub_title }}
+                    </textarea>
+                </div>
+            </div><!-- End colum -->
+        </div>
+
+        <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label class="form-control-label" for="home_core_title">Home Core Title</label>
+                        <textarea name="home_core_title" id="home_core_title" cols="30" rows="3" class="form-control">
+                            {{ $settingInfo->home_core_title }}
+                        </textarea>
+                    </div>
+                </div><!-- End colum -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-control-label" for="home_core_image">Home Core Image</label>
+                    <input type="file" class="form-control" id="home_core_image" name="home_core_image">
+                    <br>
+                    <img width="120" src="{{ asset('public/Backend/assets/media/logo/'. $settingInfo->home_core_image) }}" alt="{{ $settingInfo->home_core_image }}">
+                </div>
+            </div><!-- End colum -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-control-label" for="home_core_image_title">Home core Image Title</label>
+                    <textarea name="home_core_image_title" id="home_core_image_title" cols="30" rows="3" class="form-control">
+                        {{ $settingInfo->home_core_image_title }}
+                    </textarea>
+                </div>
+            </div><!-- End colum -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-control-label" for="footer_about">Footer About Text</label>
+                    <textarea name="footer_about" id="footer_about" cols="30" rows="3" class="form-control">
+                        {{ $settingInfo->footer_about }}
+                    </textarea>
+                </div>
+            </div><!-- End colum -->
+        </div>
+        
+
+          <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="form-control-label" for="copyright">Copyright Text</label>
                     <textarea name="copyright" id="copyright" cols="30" rows="3" class="form-control">
                         {{ $settingInfo->copyright }}
                     </textarea>

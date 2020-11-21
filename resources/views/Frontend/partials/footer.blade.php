@@ -1,3 +1,6 @@
+ @php
+     $footer_info = App\Models\setting::first();
+ @endphp
  <!-- Call To Section -->
  <section class="call-to-section">
     <div class="auto-container">
@@ -6,9 +9,9 @@
             <div class="shape-2 wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms"></div>
             <h2>Let's Get Your Project <br>Started!</h2>
             <div class="link-box">
-                <a class="theme-btn btn-style-two" href="about.html">
+                <a class="theme-btn btn-style-two" href="{{ route('contact.us') }}">
                     <i class="btn-curve"></i>
-                    <span class="btn-title">Contact with us</span>
+                    <span class="btn-title">GET FREE QUOTE</span>
                 </a>
             </div>
         </div>
@@ -29,13 +32,19 @@
                             <div class="logo">
                                 <a href="index.html"><img id="fLogo" src="images/footer-logo.png" alt="" /></a>
                             </div>
-                            <div class="text">Welcome to our web design agency. Lorem ipsum simply free text
-                                dolor sited amet cons cing elit.</div>
+                            <div class="text">{{ $footer_info->footer_about }}</div>
                             <ul class="social-links clearfix">
-                                <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
-                                <li><a href="#"><span class="fab fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fab fa-instagram"></span></a></li>
-                                <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                @isset($footer_info->facebook_url)
+                                   <li>
+                                    <a href="{{ $footer_info->facebook_url }}"><span class="fab fa-facebook-square"></span></a>
+                                  </li>    
+                                @endisset
+                                @isset($footer_info->twitter_url)
+                                <li><a href="{{ $footer_info->twitter_url }}"><span class="fab fa-twitter"></span></a></li> 
+                                @endisset
+                                @isset($footer_info->youtube_url)
+                                <li><a href="{{ $footer_info->youtube_url }}"><span class="fab fa-youtube"></span></a></li>  
+                                @endisset
                             </ul>
                         </div>
                     </div>
@@ -49,19 +58,16 @@
                             <div class="row clearfix">
                                 <div class="col-md-6 col-sm-12">
                                     <ul>
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">Meet Our Team</a></li>
-                                        <li><a href="#">Our Portfolio</a></li>
-                                        <li><a href="#">Latest News</a></li>
-                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="{{ route('about.us') }}">About</a></li>
+                                        <li><a href="{{ route('portfolio') }}">Our Portfolio</a></li>
+                                        <li><a href="{{ route('blog') }}">Latest News</a></li>
+                                        <li><a href="{{ route('contact.us') }}">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <ul>
-                                        <li><a href="#">Support</a></li>
                                         <li><a href="#">Privacy Policy</a></li>
                                         <li><a href="#">Terms of Use</a></li>
-                                        <li><a href="#">Help</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -75,12 +81,10 @@
                         <div class="widget-content">
                             <h6>Contact</h6>
                             <ul class="contact-info">
-                                <li class="address"><span class="icon flaticon-pin-1"></span> 66 Broklyn Street,
-                                    New York <br>United States of America</li>
-                                <li><span class="icon flaticon-call"></span><a href="tel:666888000">666 888
-                                        000</a></li>
+                                <li class="address"><span class="icon flaticon-pin-1"></span>{{ $footer_info->address }}</li>
+                                <li><span class="icon flaticon-call"></span><a href="tel:{{ $footer_info->phone_number }}">{{ $footer_info->phone_number }}</a></li>
                                 <li><span class="icon flaticon-email-2"></span><a
-                                        href="mailto:needhelp@linoor.com">needhelp@linoor.com</a></li>
+                                        href="mailto:{{ $footer_info->email }}">{{ $footer_info->email }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -92,7 +96,8 @@
                         <div class="widget-content">
                             <h6>Newsletter</h6>
                             <div class="newsletter-form">
-                                <form method="post" action="http://layerdrops.com/linoorhtml/contact.html">
+                                <form method="POST" action="{{ route('newsletter.store') }}">
+                                    @csrf
                                     <div class="form-group clearfix">
                                         <input type="email" name="email" value="" placeholder="Email Address"
                                             required="">
@@ -116,7 +121,7 @@
     <div class="footer-bottom">
         <div class="auto-container">
             <div class="inner clearfix">
-                <div class="copyright">&copy; copyright 2020 by Layerdrops.com</div>
+                <div class="copyright">{{ $footer_info->copyright }}</div>
             </div>
         </div>
     </div>

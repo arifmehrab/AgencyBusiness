@@ -23,6 +23,12 @@ class CreateSettingsTable extends Migration
             $table->string('twitter_url')->nullable();
             $table->string('youtube_url')->nullable();
             $table->string('copyright')->nullable();
+            $table->string('service_title')->nullable();
+            $table->string('service_sub_title')->nullable();
+            $table->string('home_core_title')->nullable();
+            $table->string('home_core_image')->nullable();
+            $table->string('home_core_image_title')->nullable();
+            $table->string('footer_about')->nullable();
             $table->timestamps();
         });
     }

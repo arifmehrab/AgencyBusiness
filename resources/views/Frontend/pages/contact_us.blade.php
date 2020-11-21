@@ -22,8 +22,8 @@
 </section>
 <!--End Banner Section -->
 
-<!--Get Quote Section-->
-<section class="get-quote-two">
+ <!--Get Quote Section-->
+ <section class="get-quote-two">
     <div class="auto-container">
         <div class="row clearfix">
             <!--Left Column-->
@@ -60,11 +60,12 @@
                 <div class="inner">
                     <div class="form-box">
                         <div class="default-form">
-                            <form id="contact-form">
+                            <form method="POST" action="{{ route('contact.msg.store') }}">
+                                @csrf
                                 <div class="row clearfix">
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                         <div class="field-inner">
-                                            <input type="text" name="username" value="" placeholder="Your Name"
+                                            <input type="text" name="name" value="" placeholder="Your Name"
                                                 required="">
                                         </div>
                                     </div>
@@ -76,7 +77,7 @@
                                     </div>
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
                                         <div class="field-inner">
-                                            <input type="text" name="phone" value="" placeholder="Phone Number"
+                                            <input type="text" name="phone_number" value="" placeholder="Phone Number"
                                                 required="">
                                         </div>
                                     </div>
@@ -88,14 +89,14 @@
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                         <div class="field-inner">
-                                            <textarea name="message" placeholder="Write Message"
-                                                required=""></textarea>
+                                            <textarea name="message" placeholder="HOW CAN WE HELP?"
+                                                ></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <button class="theme-btn btn-style-one">
+                                        <button type="submit" class="theme-btn btn-style-one">
                                             <i class="btn-curve"></i>
-                                            <span class="btn-title">Send message</span>
+                                            <span class="btn-title">Get Free Quote</span>
                                         </button>
                                     </div>
                                 </div>

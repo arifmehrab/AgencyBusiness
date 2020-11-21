@@ -6,9 +6,10 @@
 <section class="banner-section banner-one">
 
     <div class="banner-carousel owl-theme owl-carousel">
+    @foreach($sliders as $row)
         <!-- Slide Item -->
         <div class="slide-item">
-            <div class="image-layer" style="background-image: url(images/main-slider/1.jpg);"></div>
+            <div class="image-layer" style="background-image: url({{ asset('public/Backend/assets/media/slider/'.$row->slider_image) }});"></div>
             <div class="left-top-line"></div>
             <div class="right-bottom-curve"></div>
             <div class="right-top-curve"></div>
@@ -16,12 +17,12 @@
                 <div class="content-box">
                     <div class="content">
                         <div class="inner">
-                            <div class="sub-title">welcome to Linoor agency</div>
-                            <h1>Smart Web Design Agency</h1>
+                            <div class="sub-title">{{ $row->title_one }}</div>
+                            <h1>{{ $row->title_two }}</h1>
                             <div class="link-box">
-                                <a class="theme-btn btn-style-one" href="about.html">
+                                <a class="theme-btn btn-style-one" href="{{ $row->button_url }}">
                                     <i class="btn-curve"></i>
-                                    <span class="btn-title">Discover More</span>
+                                    <span class="btn-title">{{ $row->button_name }}</span>
                                 </a>
                             </div>
                         </div>
@@ -29,31 +30,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Slide Item -->
-        <div class="slide-item">
-            <div class="image-layer" style="background-image: url(images/main-slider/2.jpg);"></div>
-            <div class="left-top-line"></div>
-            <div class="right-bottom-curve"></div>
-            <div class="right-top-curve"></div>
-            <div class="auto-container">
-                <div class="content-box">
-                    <div class="content">
-                        <div class="inner">
-                            <div class="sub-title">welcome to Linoor agency</div>
-                            <h1>Smart Web <br>Design Agency</h1>
-                            <div class="link-box">
-                                <a class="theme-btn btn-style-one" href="about.html">
-                                    <i class="btn-curve"></i>
-                                    <span class="btn-title">Discover More</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    @endforeach
     </div>
 </section>
 <!--End Banner Section -->
@@ -66,9 +43,8 @@
             <div class="title-block col-xl-6 col-lg-12 col-md-12 col-sm-12">
                 <div class="inner">
                     <div class="sec-title">
-                        <h2>We Shape the Perfect <br>Solutions<span class="dot">.</span></h2>
-                        <div class="lower-text">We are committed to providing our customers with exceptional
-                            service while offering our employees the best training.</div>
+                        <h2>{{ $setting->service_title }}<span class="dot">.</span></h2>
+                        <div class="lower-text">{{ $setting->service_sub_title }}</div>
                     </div>
                 </div>
             </div>
@@ -87,7 +63,7 @@
                 <div class="inner-box">
                     <div class="bottom-curve"></div>
                     <div class="icon-box"><span class="flaticon-computer"></span></div>
-                    <h6><a href="graphic-designing.html">graphic <br>designing</a></h6>
+                    <h6><a href="graphic-designing.html">graphic designing</a></h6>
                 </div>
             </div>
             <!--Service Block-->
@@ -96,7 +72,7 @@
                 <div class="inner-box">
                     <div class="bottom-curve"></div>
                     <div class="icon-box"><span class="flaticon-digital-marketing"></span></div>
-                    <h6><a href="digital-marketing.html">digital <br>marketing</a></h6>
+                    <h6><a href="digital-marketing.html">digital marketing</a></h6>
                 </div>
             </div>
             <!--Service Block-->
@@ -105,7 +81,7 @@
                 <div class="inner-box">
                     <div class="bottom-curve"></div>
                     <div class="icon-box"><span class="flaticon-development"></span></div>
-                    <h6><a href="seo.html">seo & content <br>writing</a></h6>
+                    <h6><a href="seo.html">seo & content writing</a></h6>
                 </div>
             </div>
             <!--Service Block-->
@@ -114,7 +90,7 @@
                 <div class="inner-box">
                     <div class="bottom-curve"></div>
                     <div class="icon-box"><span class="flaticon-app-development"></span></div>
-                    <h6><a href="app-development.html">App <br>Development</a></h6>
+                    <h6><a href="app-development.html">App Development</a></h6>
                 </div>
             </div>
             <!--Service Block-->
@@ -122,8 +98,8 @@
                 data-wow-delay="900ms" data-wow-duration="1500ms">
                 <div class="inner-box">
                     <div class="bottom-curve"></div>
-                    <div class="icon-box"><span class="flaticon-ui"></span></div>
-                    <h6><a href="ui-designing.html">Ui/UX <br>designing</a></h6>
+                    <div class="icon-box"><span class="flaticon-wordpress"></span></div>
+                    <h6><a href="ui-designing.html">Ui/UX designing</a></h6>
                 </div>
             </div>
         </div>
@@ -139,27 +115,16 @@
                 <div class="left-col col-lg-5 col-md-12 col-sm-12">
                     <div class="inner">
                         <div class="sec-title">
-                            <h2>Linoor all core features <span class="dot">.</span></h2>
+                            <h2>{{ $setting->home_core_title }}<span class="dot">.</span></h2>
                         </div>
                         <div class="features">
+                            @foreach($homeCorePetures as $key => $row)
                             <div class="feature">
-                                <div class="count"><span>01</span></div>
-                                <h5>Professional Staff</h5>
-                                <div class="sub-text">There are many variations of passages of lorem ipsum
-                                    majority have suffered.</div>
+                                <div class="count"><span>0{{ $key+1 }}</span></div>
+                                <h5>{{ $row->core_title }}</h5>
+                                <div class="sub-text">{{ $row->short_description }}</div>
                             </div>
-                            <div class="feature">
-                                <div class="count"><span>02</span></div>
-                                <h5>100% Satisfaction</h5>
-                                <div class="sub-text">There are many variations of passages of lorem ipsum
-                                    majority have suffered.</div>
-                            </div>
-                            <div class="feature">
-                                <div class="count"><span>03</span></div>
-                                <h5>Quality designing</h5>
-                                <div class="sub-text">There are many variations of passages of lorem ipsum
-                                    majority have suffered.</div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -167,10 +132,10 @@
                 <div class="right-col col-lg-7 col-md-12 col-sm-12">
                     <div class="inner">
                         <div class="image-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <img src="{{ asset('public/Frontend/') }}/images/resource/featured-image-13.jpg" alt="">
+                            <img src="{{ asset('public/Backend/assets/media/logo/'.$setting->home_core_image) }}" alt="{{ $setting->home_core_image }}">
                             <div class="cap-box">
                                 <div class="cap-inner">
-                                    <h5>Total design freedom for everyone</h5>
+                                    <h5>{{ $setting->home_core_image_title }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -190,54 +155,19 @@
             <!-- Fact Counter -->
             <div class="fact-counter">
                 <div class="row clearfix">
-
+                    @foreach($countDowns as $row)
                     <!--Column-->
                     <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
                         <div class="inner">
                             <div class="content">
                                 <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="4000" data-stop="8705">0</span>
+                                    <span class="count-text" data-speed="4000" data-stop="{{ $row->count_number }}">0</span>
                                 </div>
-                                <div class="counter-title">Projects Completed</div>
+                                <div class="counter-title">{{ $row->name }}</div>
                             </div>
                         </div>
                     </div>
-
-                    <!--Column-->
-                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner">
-                            <div class="content">
-                                <div class="count-outer count-box alternate">
-                                    <span class="count-text" data-speed="3000" data-stop="480">0</span>
-                                </div>
-                                <div class="counter-title">Active clients</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Column-->
-                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner">
-                            <div class="content">
-                                <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="626">0</span>
-                                </div>
-                                <div class="counter-title">cups of coffee</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Column-->
-                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner">
-                            <div class="content">
-                                <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="4000" data-stop="9704">0</span>
-                                </div>
-                                <div class="counter-title">happy clients</div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
             </div>
@@ -255,90 +185,19 @@
         </div>
         <div class="carousel-box">
             <div class="testimonials-carousel owl-theme owl-carousel">
+                @foreach($customerReviews as $row)
                 <div class="testi-block">
                     <div class="inner">
                         <div class="icon"><span>“</span></div>
                         <div class="info">
-                            <div class="image"><a href="team.html"><img src="{{ asset('public/Frontend/') }}/images/resource/author-1.jpg"
+                            <div class="image"><a href="team.html"><img src="{{ asset('public/Backend/assets/media/review/'.$row->customer_image) }}"
                                         alt=""></a></div>
-                            <div class="name">Shirley Smith</div>
-                            <div class="designation">Director</div>
+                            <div class="name">{{ $row->customer_name }}</div>
                         </div>
-                        <div class="text">There are many variations of passages of lorem ipsum available but the
-                            majority have suffered alteration in some form, by injected humour, or randomised
-                            words which don't look even slightly believable.</div>
+                        <div class="text">{{ $row->customer_review }}</div>
                     </div>
                 </div>
-                <div class="testi-block">
-                    <div class="inner">
-                        <div class="icon"><span>“</span></div>
-                        <div class="info">
-                            <div class="image"><a href="team.html"><img src="{{ asset('public/Frontend/') }}/images/resource/author-2.jpg"
-                                        alt=""></a></div>
-                            <div class="name">Mike hardson</div>
-                            <div class="designation">Director</div>
-                        </div>
-                        <div class="text">There are many variations of passages of lorem ipsum available but the
-                            majority have suffered alteration in some form, by injected humour, or randomised
-                            words which don't look even slightly believable.</div>
-                    </div>
-                </div>
-                <div class="testi-block">
-                    <div class="inner">
-                        <div class="icon"><span>“</span></div>
-                        <div class="info">
-                            <div class="image"><a href="team.html"><img src="{{ asset('public/Frontend/') }}/images/resource/author-3.jpg"
-                                        alt=""></a></div>
-                            <div class="name">Sarah albert</div>
-                            <div class="designation">Director</div>
-                        </div>
-                        <div class="text">There are many variations of passages of lorem ipsum available but the
-                            majority have suffered alteration in some form, by injected humour, or randomised
-                            words which don't look even slightly believable.</div>
-                    </div>
-                </div>
-                <div class="testi-block">
-                    <div class="inner">
-                        <div class="icon"><span>“</span></div>
-                        <div class="info">
-                            <div class="image"><a href="team.html"><img src="{{ asset('public/Frontend/') }}/images/resource/author-1.jpg"
-                                        alt=""></a></div>
-                            <div class="name">Shirley Smith</div>
-                            <div class="designation">Director</div>
-                        </div>
-                        <div class="text">There are many variations of passages of lorem ipsum available but the
-                            majority have suffered alteration in some form, by injected humour, or randomised
-                            words which don't look even slightly believable.</div>
-                    </div>
-                </div>
-                <div class="testi-block">
-                    <div class="inner">
-                        <div class="icon"><span>“</span></div>
-                        <div class="info">
-                            <div class="image"><a href="team.html"><img src="{{ asset('public/Frontend/') }}/images/resource/author-2.jpg"
-                                        alt=""></a></div>
-                            <div class="name">Mike hardson</div>
-                            <div class="designation">Director</div>
-                        </div>
-                        <div class="text">There are many variations of passages of lorem ipsum available but the
-                            majority have suffered alteration in some form, by injected humour, or randomised
-                            words which don't look even slightly believable.</div>
-                    </div>
-                </div>
-                <div class="testi-block">
-                    <div class="inner">
-                        <div class="icon"><span>“</span></div>
-                        <div class="info">
-                            <div class="image"><a href="team.html"><img src="{{ asset('public/Frontend/') }}/images/resource/author-3.jpg"
-                                        alt=""></a></div>
-                            <div class="name">Sarah albert</div>
-                            <div class="designation">Director</div>
-                        </div>
-                        <div class="text">There are many variations of passages of lorem ipsum available but the
-                            majority have suffered alteration in some form, by injected humour, or randomised
-                            words which don't look even slightly believable.</div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -435,21 +294,11 @@
 
             <div class="logo-col col-xl-7 col-lg-12 col-md-12">
                 <div class="row clearfix">
+                    @foreach($clients as $row)
                     <div class="logo-block col-xl-4 col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div>
+                        <div class="image-box"><a href="{{ $row->brand_url }}"><img src="{{ asset('public/Backend/assets/media/brand/'.$row->brand_logo) }}" alt="{{ $row->brand_logo }}"></a></div>
                     </div>
-                    <div class="logo-block col-xl-4 col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div>
-                    </div>
-                    <div class="logo-block col-xl-4 col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div>
-                    </div>
-                    <div class="logo-block col-xl-4 col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div>
-                    </div>
-                    <div class="logo-block col-xl-4 col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

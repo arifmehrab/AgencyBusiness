@@ -75,7 +75,7 @@
   padding: 0px;
   border: none;
   outline: none;
-  font-size: 100%;
+  /* font-size: 100%; */
   line-height: inherit;
 }
 
@@ -96,14 +96,15 @@
 }
 
 body {
-  font-size: 20px;
+  /* font-size: 20px; */
   color: var(--thm-text);
   line-height: 1.8em;
   font-weight: 300;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  font-family: var(--thm-font);
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: var(--thm-font); */
   top: 0 !important;
 }
 
@@ -141,7 +142,7 @@ h6 {
   color: var(--thm-black);
 }
 
-h1 {
+/* h1 {
   font-size: 140px;
 }
 
@@ -163,7 +164,7 @@ h5 {
 
 h6 {
   font-size: 26px;
-}
+} */
 
 input,
 select,
@@ -602,7 +603,7 @@ img {
 .main-header .other-links .link-box .number {
   position: relative;
   display: block;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 24px;
 }
@@ -2093,7 +2094,7 @@ img.lazy-image.loaded {
 
 .banner-carousel .content-box .sub-title {
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.5em;
   color: #ffffff;
   font-weight: 400;
@@ -2129,7 +2130,7 @@ img.lazy-image.loaded {
 
 .banner-carousel .content-box h1 {
   display: block;
-  font-size: 140px;
+  font-size: 100px;
   line-height: 0.85em;
   color: #ffffff;
   font-weight: 600;
@@ -3602,7 +3603,7 @@ img.lazy-image.loaded {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 40px;
   padding: 0px 0px;
   cursor: pointer;
@@ -3897,7 +3898,7 @@ img.lazy-image.loaded {
 .fact-counter .column .inner .count-outer {
   position: relative;
   font-weight: 400;
-  font-size: 80px;
+  font-size: 60px;
   line-height: 1em;
   letter-spacing: 0px;
   display: block;
@@ -3905,7 +3906,7 @@ img.lazy-image.loaded {
 
 .fact-counter .column .inner .counter-title {
   position: relative;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #999b9f;
   letter-spacing: 1px;
@@ -4120,7 +4121,7 @@ img.lazy-image.loaded {
 
 .team-section {
   position: relative;
-  padding: 120px 0px 90px;
+  padding: 20px 0px 90px;
   background: none;
   z-index: 2;
 }
@@ -4462,7 +4463,7 @@ img.lazy-image.loaded {
 
 .agency-section {
   position: relative;
-  padding: 120px 0px 80px;
+  padding: 90px 0px 80px;
   background: #ffffff url(../images/background/pattern-2.png) left top repeat;
 }
 
@@ -4555,7 +4556,7 @@ img.lazy-image.loaded {
 .default-tabs .tab-buttons .tab-btn {
   position: relative;
   line-height: 30px;
-  font-size: 16px;
+  font-size: 11px;
   font-weight: 500;
   color: var(--thm-black);
   text-align: center;
@@ -4634,7 +4635,7 @@ img.lazy-image.loaded {
 
 .default-tabs .tabs-content .text {
   position: relative;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
   color: var(--thm-text);
   line-height: 1.7em;
@@ -4643,7 +4644,7 @@ img.lazy-image.loaded {
 
 .agency-section .right-col .text {
   position: relative;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 300;
   color: var(--thm-text);
   line-height: 1.7em;
@@ -4720,7 +4721,7 @@ img.lazy-image.loaded {
 
 .news-section {
   position: relative;
-  padding: 120px 0px 90px;
+  padding: 50px 0px 90px;
 }
 
 .news-section.alt-bg {
@@ -5266,7 +5267,7 @@ img.lazy-image.loaded {
 .main-footer .links-widget ul li a {
   position: relative;
   color: #999b9f;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 30px;
   text-transform: capitalize;
   letter-spacing: 0.07em;
@@ -5387,7 +5388,7 @@ img.lazy-image.loaded {
   display: block;
   font-weight: 300;
   line-height: 1.5em;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.1em;
   margin: 25px 0 0;
 }
@@ -5477,7 +5478,7 @@ img.lazy-image.loaded {
   position: relative;
   font-weight: 300;
   line-height: 1.5em;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0.1em;
 }
 
@@ -6226,7 +6227,7 @@ img.lazy-image.loaded {
 
 .testimonials-section {
   position: relative;
-  padding: 120px 0px;
+  padding: 90px 0px;
   background: #ffffff url(../images/background/pattern-2.png) left top repeat;
   overflow: hidden;
 }
@@ -6337,7 +6338,7 @@ img.lazy-image.loaded {
 
 .testi-block .info .name {
   display: block;
-  font-size: 24px;
+  font-size: 17px;
   line-height: 1.2em;
   color: var(--thm-black);
   font-weight: 400;
@@ -6362,7 +6363,7 @@ img.lazy-image.loaded {
 .testi-block .text {
   position: relative;
   display: block;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1.7em;
   font-weight: 300;
   letter-spacing: 0.1em;
@@ -7851,7 +7852,7 @@ img.lazy-image.loaded {
 
 .sponsors-section-two {
   position: relative;
-  padding: 120px 0px 90px;
+  padding: 10px 0px 90px;
   background: #ffffff;
   border-top: 1px solid #e9ebee;
 }
@@ -9585,7 +9586,7 @@ img.lazy-image.loaded {
 .mobile-nav__container li a {
   text-transform: uppercase;
   color: #9ca3a9;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 1px;
   line-height: 24px;
   font-weight: 300;

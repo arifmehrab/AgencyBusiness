@@ -1,3 +1,6 @@
+        @php
+            $route  = Route::current()->getName();
+        @endphp
         <!-- Main Header -->
         <header class="main-header header-style-one">
 
@@ -19,10 +22,10 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current"><a href="{{ route('index') }}">Home</a>
+                                    <li class="{{ ($route == 'index')? 'current': '' }}"><a href="{{ route('index') }}">Home</a>
                                     </li>
-                                    <li><a href="{{ route('about.us') }}">About Us</a></li>
-                                    <li class="dropdown"><a href="services.html">Services</a>
+                                    <li class="{{ ($route == 'about.us')? 'current': '' }}"><a href="{{ route('about.us') }}">About Us</a></li>
+                                    <li class="dropdown"><a href="#">Services</a>
                                         <ul>
                                             <li><a href="web-development.html">Website Development</a></li>
                                             <li><a href="graphic-designing.html">Graphic Designing</a></li>
@@ -32,9 +35,9 @@
                                             <li><a href="ui-designing.html">UI/UX Designing</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                    <li><a href="{{ route('blog') }}">Blog</a></li>
-                                    <li><a href="{{ route('contact.us') }}">Contact</a></li>
+                                    <li class="{{ ($route == 'portfolio')? 'current': '' }}"><a href="{{ route('portfolio') }}">Portfolio</a></li>
+                                    <li class="{{ ($route == 'blog')? 'current': '' }}"><a href="{{ route('blog') }}">Blog</a></li>
+                                    <li class="{{ ($route == 'contact.us')? 'current': '' }}"><a href="{{ route('contact.us') }}">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>

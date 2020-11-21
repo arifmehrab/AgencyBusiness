@@ -27,6 +27,8 @@
 
     <!-- Color css -->
     <link rel="stylesheet" id="jssDefault" href="{{ asset('public/Frontend/css/colors/color-default.css') }}">
+    <!-- Toastr CSS -->
+    <link href="{{ asset('public/Backend/assets/toster-js/css/toastr.css') }}" rel="stylesheet">
     @stack('css')
     <link rel="shortcut icon" href="{{ asset('public/Frontend/images/favicon.png') }}" id="fav-shortcut" type="image/x-icon">
     <link rel="icon" href="{{ asset('public/Frontend/images/favicon.png') }}" id="fav-icon" type="image/x-icon">
@@ -71,7 +73,29 @@
 
     <script src="{{ asset('public/Frontend/js/lang.js') }}"></script>
     <script src="{{ asset('public/Frontend/js/color-switcher.js') }}"></script>
+    <!--- Toastr js Start --->
+    <script src="{{ asset('public/Backend/assets/toster-js/js/toastr.js') }}"></script>
     @stack('js')
+    <!--- Toastr Message --->
+    <script>
+        @if(Session::has('message'))
+        var type="{{Session::get('alert-type','info')}}"
+        switch(type){
+            case 'info':
+                toastr.info("{{ Session::get('message') }}");
+                break;
+            case 'success':
+                toastr.success("{{ Session::get('message') }}");
+                break;
+            case 'warning':
+                toastr.warning("{{ Session::get('message') }}");
+                break;
+            case 'error':
+                toastr.error("{{ Session::get('message') }}");
+                break;
+        }
+        @endif
+    </script>
 
 </body>
 

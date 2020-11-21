@@ -14,6 +14,8 @@ class SliderController extends Controller
         $sliders = slider::all();
         return view('Backend.Admin.slider.slider_index', compact('sliders'));
     }
+
+
     // slider Store ===========
     public function store(Request $request)
     {
@@ -43,6 +45,43 @@ class SliderController extends Controller
         // redirect
         return redirect()->route('admin.slider.index')->with($notification);
     }
+
+
+    // Slider Edit ===========
+    public function edit($id)
+    {
+       $sliderEdit = slider::findOrFail($id);
+       return view('Backend.Admin.slider.slider_edit', compact('sliderEdit'));
+    }
+
+
+    // Slider Update ===========
+    public function update(Request $request, $id)
+    {
+        $sliderUpdate = slider::findOrFail($id);
+        //Image Check
+        if ($request->hasFile('slider_image')) {
+            @unlink(public_path('Backend/assets/media/slider/'.$sliderUpdate->slider_image));
+            $slider_image = hexdec(uniqid()) . '.' . $request->slider_image->getClientOriginalExtension();
+            Image::make($request->slider_image)->resize(1895, 975)->save('public/Backend/assets/media/slider/' . $slider_image);
+            $sliderUpdate->slider_image = $slider_image;
+        }
+        // Store
+        $sliderUpdate->title_one    = $request->title_one;
+        $sliderUpdate->title_two    = $request->title_two;
+        $sliderUpdate->button_name  = $request->button_name;
+        $sliderUpdate->button_url   = $request->button_url;
+        $sliderUpdate->save();
+        // Notification
+        $notification = array(
+            'message'    => 'Slider Updated Successfully',
+            'alert-type' => 'success',
+        );
+        // redirect
+        return redirect()->route('admin.slider.index')->with($notification);
+    }
+
+
     // Slider Delete ===========
     public function delete($id)
     {

@@ -58,13 +58,70 @@
         
         <li class="nav-item">
           <a class="nav-link" href="#slider" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples1">
-            <i class="ni ni-world text-primary"></i>
+            <i class="fab fa-slideshare"></i>
             <span class="nav-link-text">Slider</span>
           </a>
           <div class="collapse-show collapse" id="slider">
             <ul class="nav nav-sm flex-column">
               <li class="nav-item">
                 <a href="{{ route('admin.slider.index') }}" class="nav-link">All slider</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#service" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples1">
+            <i class="fa fa-wrench"></i>
+            <span class="nav-link-text">Services</span>
+          </a>
+          <div class="collapse-show collapse" id="service">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <a href="{{ route('admin.service.index') }}" class="nav-link">All Services</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.service.create') }}" class="nav-link">Add service</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#home_modules" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples1">
+            <i class="fa fa-home"></i>
+            <span class="nav-link-text">Home Page Modules</span>
+          </a>
+          <div class="collapse-show collapse" id="home_modules">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <a href="{{ route('admin.corefeature.index') }}" class="nav-link">Core Features</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.countdown.index') }}" class="nav-link">Project Countdown</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.review.index') }}" class="nav-link">Customer Review</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.brand.index') }}" class="nav-link">Client Logo</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about_modules" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-examples1">
+            <i class="fa fa-home"></i>
+            <span class="nav-link-text">About Page Modules</span>
+          </a>
+          <div class="collapse-show collapse" id="about_modules">
+            <ul class="nav nav-sm flex-column">
+              <li class="nav-item">
+                <a href="{{ route('admin.about.index') }}" class="nav-link">About Content</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.ourteam.index') }}" class="nav-link">Our Teams</a>
               </li>
             </ul>
           </div>
