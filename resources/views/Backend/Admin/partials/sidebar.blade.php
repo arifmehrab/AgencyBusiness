@@ -140,6 +140,9 @@
                 <li class="nav-item">
                   <a href="{{ route('admin.seo') }}" class="nav-link">SEO Setting</a>
                 </li>
+                <li class="nav-item">
+                  <a href="{{ route('admin.security.index') }}" class="nav-link">Security Pages Setting</a>
+                </li>
               </ul>
             </div>
           </li>

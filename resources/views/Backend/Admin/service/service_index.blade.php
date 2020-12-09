@@ -23,7 +23,7 @@
           <h2 class="mb-0">Total categories ({{ $services->count() }})</h2>
         </div>
         <div class="table-responsive py-4">
-          <table class="table table-flush" id="datatable-buttons">
+          <table class="table table-flush">
             <thead class="thead-light">
               <tr>
                 <th>Title</th>

@@ -48,60 +48,17 @@
                     </div>
                 </div>
             </div>
+            @foreach($services as $row)
             <!--Service Block-->
             <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms"
                 data-wow-duration="1500ms">
                 <div class="inner-box">
                     <div class="bottom-curve"></div>
-                    <div class="icon-box"><span class="flaticon-responsive"></span></div>
-                    <h6><a href="web-development.html">Website <br>Development</a></h6>
+                    <div class="icon-box"><span class="{{ $row->service_icon }}"></span></div>
+                    <h6><a href="{{ route('single.service', $row->service_slug) }}">{{ $row->service_title }}</a></h6>
                 </div>
             </div>
-            <!--Service Block-->
-            <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInLeft"
-                data-wow-delay="300ms" data-wow-duration="1500ms">
-                <div class="inner-box">
-                    <div class="bottom-curve"></div>
-                    <div class="icon-box"><span class="flaticon-computer"></span></div>
-                    <h6><a href="graphic-designing.html">graphic designing</a></h6>
-                </div>
-            </div>
-            <!--Service Block-->
-            <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="0ms"
-                data-wow-duration="1500ms">
-                <div class="inner-box">
-                    <div class="bottom-curve"></div>
-                    <div class="icon-box"><span class="flaticon-digital-marketing"></span></div>
-                    <h6><a href="digital-marketing.html">digital marketing</a></h6>
-                </div>
-            </div>
-            <!--Service Block-->
-            <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInLeft"
-                data-wow-delay="300ms" data-wow-duration="1500ms">
-                <div class="inner-box">
-                    <div class="bottom-curve"></div>
-                    <div class="icon-box"><span class="flaticon-development"></span></div>
-                    <h6><a href="seo.html">seo & content writing</a></h6>
-                </div>
-            </div>
-            <!--Service Block-->
-            <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInLeft"
-                data-wow-delay="600ms" data-wow-duration="1500ms">
-                <div class="inner-box">
-                    <div class="bottom-curve"></div>
-                    <div class="icon-box"><span class="flaticon-app-development"></span></div>
-                    <h6><a href="app-development.html">App Development</a></h6>
-                </div>
-            </div>
-            <!--Service Block-->
-            <div class="service-block col-xl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInLeft"
-                data-wow-delay="900ms" data-wow-duration="1500ms">
-                <div class="inner-box">
-                    <div class="bottom-curve"></div>
-                    <div class="icon-box"><span class="flaticon-wordpress"></span></div>
-                    <h6><a href="ui-designing.html">Ui/UX designing</a></h6>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -212,71 +169,27 @@
 
         <div class="row clearfix">
             <!--News Block-->
+            @foreach($posts as $row)
             <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0ms"
                 data-wow-duration="1500ms">
                 <div class="inner-box">
                     <div class="image-box">
-                        <a href="blog-single.html"><img src="{{ asset('public/Frontend/') }}/images/resource/news-1.jpg" alt=""></a>
+                        <a href="blog-single.html"><img src="{{ asset('public/Backend/assets/media/posts/'.$row->image) }}" alt=""></a>
                     </div>
                     <div class="lower-box">
                         <div class="post-meta">
                             <ul class="clearfix">
-                                <li><span class="far fa-clock"></span> 20 Mar</li>
-                                <li><span class="far fa-user-circle"></span> Admin</li>
-                                <li><span class="far fa-comments"></span> 2 Comments</li>
+                                <li><span class="far fa-clock"></span>{{ date('d-m-Y', strtotime($row->date)) }}</li>
                             </ul>
                         </div>
-                        <h5><a href="blog-single.html">basic rules of running web agency business</a></h5>
-                        <div class="text">Lorem ipsum is simply free text used by copytyping refreshing.</div>
-                        <div class="link-box"><a class="theme-btn" href="blog-single.html"><span
+                        <h5><a href="{{ route('blog.single', $row->slug) }}">{{ $row->title }}</a></h5>
+                        <div class="text">{!!  Illuminate\Support\Str::words($row->body, 15, ' .....') !!}</div>
+                        <div class="link-box"><a class="theme-btn" href="{{ route('blog.single', $row->slug) }}"><span
                                     class="flaticon-next-1"></span></a></div>
                     </div>
                 </div>
             </div>
-            <!--News Block-->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="300ms"
-                data-wow-duration="1500ms">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <a href="blog-single.html"><img src="{{ asset('public/Frontend/') }}/images/resource/news-2.jpg" alt=""></a>
-                    </div>
-                    <div class="lower-box">
-                        <div class="post-meta">
-                            <ul class="clearfix">
-                                <li><span class="far fa-clock"></span> 20 Mar</li>
-                                <li><span class="far fa-user-circle"></span> Admin</li>
-                                <li><span class="far fa-comments"></span> 2 Comments</li>
-                            </ul>
-                        </div>
-                        <h5><a href="blog-single.html">Delivering the best digital marketing</a></h5>
-                        <div class="text">Lorem ipsum is simply free text used by copytyping refreshing.</div>
-                        <div class="link-box"><a class="theme-btn" href="blog-single.html"><span
-                                    class="flaticon-next-1"></span></a></div>
-                    </div>
-                </div>
-            </div>
-            <!--News Block-->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="600ms"
-                data-wow-duration="1500ms">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <a href="blog-single.html"><img src="{{ asset('public/Frontend/') }}/images/resource/news-3.jpg" alt=""></a>
-                    </div>
-                    <div class="lower-box">
-                        <div class="post-meta">
-                            <ul class="clearfix">
-                                <li><span class="far fa-clock"></span> 20 Mar</li>
-                                <li><span class="far fa-user-circle"></span> Admin</li>
-                                <li><span class="far fa-comments"></span> 2 Comments</li>
-                            </ul>
-                        </div>
-                        <h5><a href="blog-single.html">Introducing the latest linoor features</a></h5>
-                        <div class="text">Lorem ipsum is simply free text used by copytyping refreshing.</div>
-                        <div class="link-box"><a class="theme-btn" href="blog-single.html"><span
-                                    class="flaticon-next-1"></span></a></div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

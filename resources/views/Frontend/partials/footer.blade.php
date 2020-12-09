@@ -1,5 +1,7 @@
  @php
      $footer_info = App\Models\setting::first();
+     // logo
+    $logo = App\Models\setting::select('logo')->first();
  @endphp
  <!-- Call To Section -->
  <section class="call-to-section">
@@ -7,7 +9,7 @@
         <div class="inner clearfix">
             <div class="shape-1 wow slideInRight" data-wow-delay="0ms" data-wow-duration="1500ms"></div>
             <div class="shape-2 wow fadeInDown" data-wow-delay="0ms" data-wow-duration="1500ms"></div>
-            <h2>Let's Get Your Project <br>Started!</h2>
+            <h2>Ready To Discuss Your<br>Project?</h2>
             <div class="link-box">
                 <a class="theme-btn btn-style-two" href="{{ route('contact.us') }}">
                     <i class="btn-curve"></i>
@@ -30,7 +32,7 @@
                     <div class="footer-widget logo-widget">
                         <div class="widget-content">
                             <div class="logo">
-                                <a href="index.html"><img id="fLogo" src="images/footer-logo.png" alt="" /></a>
+                                <a href="{{ url('/') }}"><img id="fLogo" src="{{ asset('public/Backend/assets/media/logo/'.$logo->logo) }}" alt="TOPUPSOFT" /></a>
                             </div>
                             <div class="text">{{ $footer_info->footer_about }}</div>
                             <ul class="social-links clearfix">
@@ -66,8 +68,8 @@
                                 </div>
                                 <div class="col-md-6 col-sm-12">
                                     <ul>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Terms of Use</a></li>
+                                        <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
+                                        <li><a href="{{ route('terms') }}">Terms of Use</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -82,9 +84,15 @@
                             <h6>Contact</h6>
                             <ul class="contact-info">
                                 <li class="address"><span class="icon flaticon-pin-1"></span>{{ $footer_info->address }}</li>
-                                <li><span class="icon flaticon-call"></span><a href="tel:{{ $footer_info->phone_number }}">{{ $footer_info->phone_number }}</a></li>
-                                <li><span class="icon flaticon-email-2"></span><a
-                                        href="mailto:{{ $footer_info->email }}">{{ $footer_info->email }}</a></li>
+                                <li><span class="icon fab fa-whatsapp-square"></span>
+                                    <a target="__blank" href="https://api.whatsapp.com/send?phone=+8801827924326">{{ $footer_info->phone_number }}</a>
+                                </li>
+                                <li><span class="icon flaticon-email-2"></span>
+                                    <a href="mailto:{{ $footer_info->email }}">{{ $footer_info->email }}</a>
+                                </li>
+                                <li><span class="icon fab fa-skype"></span>
+                                    <a href="skype:arifmehrab11?chat">Skype</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

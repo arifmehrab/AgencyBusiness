@@ -34,7 +34,7 @@
                         <ul class="tab-btns tab-buttons clearfix">
                             <li data-tab="#tab-1" class="tab-btn active-btn"><span>Our Mission</span></li>
                             <li data-tab="#tab-2" class="tab-btn"><span>Our Vision</span></li>
-                            <li data-tab="#tab-3" class="tab-btn"><span>Our History</span></li>
+                            <li data-tab="#tab-3" class="tab-btn"><span>We Believe In</span></li>
                         </ul>
 
                         <!--Tabs Container-->

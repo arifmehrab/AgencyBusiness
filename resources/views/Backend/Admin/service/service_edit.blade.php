@@ -37,6 +37,12 @@
             </div>
 
             <div class="form-group">
+              <label for="service_keyword">Tages</label>
+              <br>
+              <input name="service_keyword" type="text" class="form-control" value="{{ $serviceEdit->service_keyword }}" data-role="tagsinput" placeholder="Add Tages Here" id="service_keyword" required/>
+            </div>
+
+            <div class="form-group">
                 <label class="form-control-label" for="service_body">service Body*</label>
                 <textarea class="summernote" name="service_body" id="service_body">{!! $serviceEdit->service_body !!}</textarea>
             </div>

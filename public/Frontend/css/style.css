@@ -259,7 +259,7 @@ figure {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: var(--thm-base);
+  background: #f48320;
   color: var(--thm-black);
   border-radius: 5px;
   overflow: hidden;
@@ -271,13 +271,13 @@ figure {
 }
 
 .btn-style-one .btn-title {
-  position: relative;
-  display: block;
-  font-size: 18px;
-  line-height: 30px;
-  font-weight: 400;
-  padding: 19px 50px 16px;
-  z-index: 1;
+    position: relative;
+    display: block;
+    font-size: 13px;
+    line-height: 30px;
+    font-weight: 400;
+    padding: 10px 33px 10px;
+    z-index: 1;
 }
 
 .btn-style-one:hover {
@@ -329,14 +329,14 @@ figure {
 }
 
 .btn-style-two .btn-title {
-  position: relative;
-  display: block;
-  font-size: 18px;
-  line-height: 30px;
-  font-weight: 400;
-  padding: 19px 50px 16px;
-  z-index: 1;
-  transition: 0.5s;
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+    padding: 14px 35px 14px;
+    z-index: 1;
+    transition: 0.5s;
 }
 
 .btn-style-two:hover {
@@ -553,7 +553,7 @@ img {
   position: relative;
   display: inline-block;
   max-width: 100%;
-  max-height: 34px;
+  max-height: 45px;
   z-index: 1;
 }
 
@@ -8360,7 +8360,7 @@ img.lazy-image.loaded {
 
 .sidebar-page-container {
   position: relative;
-  padding: 120px 0px 90px;
+  padding: 60px 0px 90px;
 }
 
 .sidebar-page-container .content-side {
@@ -8471,7 +8471,7 @@ img.lazy-image.loaded {
   position: relative;
   display: block;
   line-height: 48px;
-  font-size: 20px;
+  font-size: 17px;
   letter-spacing: 1px;
   text-transform: capitalize;
   color: var(--thm-text);
@@ -8534,7 +8534,7 @@ img.lazy-image.loaded {
   display: block;
   font-weight: 300;
   line-height: 1.5em;
-  font-size: 20px;
+  font-size: 17px;
   letter-spacing: 0.1em;
 }
 
@@ -8542,7 +8542,7 @@ img.lazy-image.loaded {
   position: relative;
   margin-top: 20px;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 20px;
   line-height: 40px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -8648,7 +8648,7 @@ img.lazy-image.loaded {
   position: relative;
   display: block;
   width: 100%;
-  border-radius: 50%;
+  border-radius: 17%;
   -webkit-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -8743,7 +8743,7 @@ img.lazy-image.loaded {
   position: relative;
   display: block;
   line-height: 30px;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 1px;
   text-transform: capitalize;
   color: var(--thm-text);
@@ -8887,7 +8887,7 @@ img.lazy-image.loaded {
   display: inline-block;
   vertical-align: middle;
   margin: 0 20px 5px 0px;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }

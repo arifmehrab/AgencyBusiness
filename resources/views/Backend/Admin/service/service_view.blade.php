@@ -10,6 +10,7 @@
   </div>
 @endsection
 @section('content_body')
+<p>{{ $serviceView->service_keyword }}</p>
 <div class="card mb-4 p-3">
     <p>
         {!! $serviceView->service_body !!}

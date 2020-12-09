@@ -20,9 +20,19 @@ use Illuminate\Support\Facades\Route;
 // Pages
 Route::get('/', 'Frontend\FrontendController@index')->name('index');
 Route::get('/about-us', 'Frontend\FrontendController@aboutUs')->name('about.us');
-Route::get('/blog', 'Frontend\FrontendController@Blog')->name('blog');
 Route::get('/portfolio', 'Frontend\FrontendController@portfolio')->name('portfolio');
 Route::get('/contact-us', 'Frontend\FrontendController@contactus')->name('contact.us');
+Route::get('/privacy', 'Frontend\FrontendController@privacy')->name('privacy');
+Route::get('/terms', 'Frontend\FrontendController@terms')->name('terms');
+Route::get('/refund-policy', 'Frontend\FrontendController@refundPolicy')->name('refund.policy');
+
+// Blog
+Route::get('/blog', 'Frontend\FrontendController@Blog')->name('blog');
+Route::get('/blog/{slug}', 'Frontend\FrontendController@BlogSingle')->name('blog.single');
+Route::get('/category/{slug}', 'Frontend\FrontendController@categoryBlogs')->name('category.blog');
+
+// Services
+Route::get('/service/{slug}', 'Frontend\FrontendController@singleService')->name('single.service');
 
 // NewsLetter 
 Route::post('/newsletter/store', 'Frontend\FrontendController@newsLetterStore')->name('newsletter.store');
@@ -134,5 +144,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.', 'mi
     // Contact us Page Modules ======================
     Route::get('/contact-msg', 'ContactUsController@index')->name('contact.msg.index');
     Route::get('/contact-msg/delete/{id}', 'ContactUsController@delete')->name('contact.msg.delete');
+
+    // Security Page Modules ======================
+    Route::get('/security', 'SecurityController@index')->name('security.index');
+    Route::put('/security/update/{id}', 'SecurityController@update')->name('security.update');
     
 });

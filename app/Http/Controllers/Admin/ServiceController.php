@@ -27,18 +27,20 @@ class ServiceController extends Controller
     {
         // validate
         $request->validate([
-            'service_title' => 'required',
-            'service_body'  => 'required',
+            'service_title'   => 'required',
+            'service_body'    => 'required',
+            'service_keyword' => 'required',
         ]);
 
         $serviceStore = new service();
 
         // Store
-        $serviceStore->service_title  = $request->service_title;
-        $serviceStore->service_slug   = Str::slug($request->service_title, '-');
-        $serviceStore->service_icon   = $request->service_icon;
-        $serviceStore->service_body   = $request->service_body;
-        $serviceStore->service_status = '1';
+        $serviceStore->service_title   = $request->service_title;
+        $serviceStore->service_slug    = Str::slug($request->service_title, '-');
+        $serviceStore->service_icon    = $request->service_icon;
+        $serviceStore->service_keyword = $request->service_keyword;
+        $serviceStore->service_body    = $request->service_body;
+        $serviceStore->service_status  = '1';
         $serviceStore->save();
         // Notification
         $notification = array(
@@ -68,11 +70,12 @@ class ServiceController extends Controller
         $serviceUpdate = service::findOrFail($id);
 
         // UPdate
-        $serviceUpdate->service_title  = $request->service_title;
-        $serviceUpdate->service_slug   = Str::slug($request->service_title, '-');
-        $serviceUpdate->service_icon   = $request->service_icon;
-        $serviceUpdate->service_body   = $request->service_body;
-        $serviceUpdate->service_status = '1';
+        $serviceUpdate->service_title   = $request->service_title;
+        $serviceUpdate->service_slug    = Str::slug($request->service_title, '-');
+        $serviceUpdate->service_icon    = $request->service_icon;
+        $serviceUpdate->service_keyword = $request->service_keyword;
+        $serviceUpdate->service_body    = $request->service_body;
+        $serviceUpdate->service_status  = '1';
         $serviceUpdate->save();
         // Notification
         $notification = array(

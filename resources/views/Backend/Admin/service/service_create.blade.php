@@ -1,5 +1,8 @@
 @extends('layouts.admin_app')
 @section('title', 'admin | categories')
+@push('css')
+<link href="{{ asset('public/Backend/assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+@endpush
 @section('content_head')
 <div class="header-body">
     <div class="row align-items-center py-4">
@@ -37,6 +40,12 @@
             </div>
 
             <div class="form-group">
+                <label for="service_keyword">Tages</label>
+                <br>
+                <input name="service_keyword" type="text" class="form-control" value="webdesign,wordpress" data-role="tagsinput" placeholder="Add Tages Here" id="service_keyword" required/>
+            </div>
+
+            <div class="form-group">
                 <label class="form-control-label" for="service_body">service Body*</label>
                 <textarea class="summernote" name="service_body" id="service_body">write Service Details Here..</textarea>
             </div>
@@ -50,3 +59,6 @@
     </div><!-- End Card Body -->
 </div><!-- end card -->
 @endsection
+@push('js')
+<script src="{{ asset('public/Backend/assets/vendor/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
+@endpush

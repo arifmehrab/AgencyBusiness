@@ -30,6 +30,6 @@ class contactinfo extends Mailable
     public function build()
     {
         $msgDetails = $this->msgStore;
-        return $this->view('Backend.Admin.mails.contact_info', compact('msgDetails'))->subject('Message From CodingSolve');
+        return $this->view('Backend.Admin.mails.contact_info', compact('msgDetails'))->subject('Message From TopUpSoft');
     }
 }

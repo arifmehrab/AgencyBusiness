@@ -10,12 +10,6 @@
         <div class="auto-container">
             <div class="inner-container clearfix">
                 <h1>Contact</h1>
-                <div class="page-nav">
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Contact</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -32,24 +26,32 @@
                     <div class="sec-title">
                         <h2>We are always here to help you<span class="dot">.</span></h2>
                     </div>
-                    <div class="text">There are many variatns of passages the majority have suffered alteration
-                        in some foor randomised words believable.</div>
                     <div class="info">
                         <ul>
                             <li class="address">
                                 <span class="icon flaticon-pin-1"></span>
-                                <strong>Visit Us</strong>
+                                <strong>Head Office </strong>
                                 66 Broklyn Street, New York. USA
+                            </li>
+                            <li class="address">
+                                <span class="icon flaticon-pin-1"></span>
+                                <strong>Bangladesh Office</strong>
+                                Dhanmondi Dhaka 1209 Bangladesh
                             </li>
                             <li>
                                 <span class="icon flaticon-email-2"></span>
                                 <strong>Email address</strong>
-                                <a href="mailto:needhelp@linoor.com">needhelp@linoor.com</a>
+                                <a href="mailto:topupsoft@gmail.com">topupsoft@gmail.com</a>
                             </li>
                             <li>
-                                <span class="icon flaticon-call"></span>
-                                <strong>Call now</strong>
-                                <a href="tel:666888000">666 888 000</a>
+                                <span class="icon fab fa-whatsapp-square"></span>
+                                <strong>Call Whatsapp</strong>
+                                <a href="https://api.whatsapp.com/send?phone=+8801827924326">8801827924326</a>
+                            </li>
+                            <li>
+                                <span class="icon fab fa-skype"></span>
+                                <strong>Skype</strong>
+                                <a href="skype:arifmehrab11?chat">Skype</a>
                             </li>
                         </ul>
                     </div>
@@ -113,9 +115,7 @@
 <div class="map-section">
     <div class="auto-container">
         <div class="map-container">
-            <iframe class="map-iframe"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230899.1642407818!2d145.06327708904033!3d-37.792102974783376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65cd0db468a97%3A0xb61fde84306fc38a!2sMelbourne%20Zoo!5e0!3m2!1sen!2s!4v1592307685926!5m2!1sen!2s"
-                        style="border:0;" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1535.391860026811!2d90.36472489537987!3d23.754587124435368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8ad2a40a6c1%3A0x61276bcdb2c3b5b3!2sDhaka%201209!5e0!3m2!1sen!2sbd!4v1607214066120!5m2!1sen!2sbd" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
     </div>
 </div>

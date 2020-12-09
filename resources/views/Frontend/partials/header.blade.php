@@ -1,5 +1,8 @@
         @php
             $route  = Route::current()->getName();
+            $services = App\Models\service::select('service_title', 'service_slug')->orderBy('id', 'ASC')->get();
+            // logo
+            $logo = App\Models\setting::select('logo')->first();
         @endphp
         <!-- Main Header -->
         <header class="main-header header-style-one">
@@ -9,8 +12,8 @@
                 <div class="inner-container clearfix">
                     <!--Logo-->
                     <div class="logo-box">
-                        <div class="logo"><a href="index.html" title="Linoor - DIgital Agency HTML Template"><img
-                                    src="{{ asset('public/Frontend') }}/images/logo.png" id="thm-logo" alt="Linoor - DIgital Agency HTML Template"
+                        <div class="logo"><a href="{{ url('/') }}" title="TOPUPSOFT Digital service Agency"><img
+                                    src="{{ asset('public/Backend/assets/media/logo/'.$logo->logo) }}" id="thm-logo" alt="TOPUPSOFT"
                                     title="Linoor - DIgital Agency HTML Template"></a></div>
                     </div>
                     <div class="nav-outer clearfix">
@@ -27,12 +30,13 @@
                                     <li class="{{ ($route == 'about.us')? 'current': '' }}"><a href="{{ route('about.us') }}">About Us</a></li>
                                     <li class="dropdown"><a href="#">Services</a>
                                         <ul>
-                                            <li><a href="web-development.html">Website Development</a></li>
-                                            <li><a href="graphic-designing.html">Graphic Designing</a></li>
-                                            <li><a href="digital-marketing.html">Digital Marketing</a></li>
-                                            <li><a href="seo.html">SEO & Content Writting</a></li>
-                                            <li><a href="app-development.html">App Development</a></li>
-                                            <li><a href="ui-designing.html">UI/UX Designing</a></li>
+                                            @foreach($services as $row)
+                                            <li>
+                                                <a href="{{ route('single.service', $row->service_slug) }}">
+                                                    {{ $row->service_title }}
+                                                </a>
+                                            </li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                     <li class="{{ ($route == 'portfolio')? 'current': '' }}"><a href="{{ route('portfolio') }}">Portfolio</a></li>
@@ -47,10 +51,10 @@
 
                         <div class="link-box">
                             <div class="call-us">
-                                <a class="link" href="tel:6668880000">
+                                <a target="__blank" class="link" href="https://api.whatsapp.com/send?phone=+8801827924326">
                                     <span class="icon"></span>
-                                    <span class="sub-text">Call Anytime</span>
-                                    <span class="number">666 888 0000</span>
+                                    <span class="sub-text">Whatsapp Anytime</span>
+                                    <span class="number">01827924326</span>
                                 </a>
                             </div>
                         </div>
@@ -84,14 +88,11 @@
                 </nav>
                 <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
                 <div class="side-menu__content">
-                    <p><a href="mailto:needhelp@linoor.com">needhelp@linoor.com</a> <br> <a href="tel:888-999-0000">888
-                            999 0000</a></p>
-                    <div class="side-menu__social">
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
+                    <p>
+                        <a href="mailto:topupsoft@gmail.com">topupsoft@gmail.com</a>
+                         <br> 
+                        <a href="https://api.whatsapp.com/send?phone=+8801827924326">8801827924326</a>
+                    </p>
                 </div><!-- /.side-menu__content -->
             </div><!-- /.side-menu__block-inner -->
         </div><!-- /.side-menu__block -->
